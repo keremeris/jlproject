@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Settings</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="">
+          <div class="sidebar">
+            <a href="./dashboard.html" class="menu-item">
+              <i class="fa fa-image mr-2"></i>
+              Images
+            </a>
+            <a href="./texts.html" class="menu-item">
+              <i class="fa fa-text-width mr-2"></i>
+              Texts
+            </a>
+            <a href="./settings.html" class="menu-item active">
+              <i class="fa fa-cog mr-2"></i>
+              Settings
+            </a>
+            <div class="logout">
+              <a onclick="signOut()">
+                <i class="fa fa-sign-out"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+          <div class="content">
+            <h2>Settings</h2>
+            <div class="mt-4">
+              <h4 class="sub-title">Iteration speed</h4>
+              <div class="card">
+                <div class="row">
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
+                    <input type="radio" name="iteration" id="30seconds" />
+                    <label class="radio-label active">30 seconds</label>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
+                    <input type="radio" name="iteration" id="minute" />
+                    <label class="radio-label">1 minute</label>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
+                    <input type="radio" name="iteration" id="30minutes" />
+                    <label class="radio-label">30 minutes</label>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
+                    <input type="radio" name="iteration" id="hour" />
+                    <label class="radio-label">1 hour</label>
+                  </div>
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1"></div>
+                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1 text-right pr-0">
+                    <button class="btn btn-default" onclick="updateiteration()">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-sm-8 col-xs-12">
+                <h4 class="sub-title">Add new user</h4>
+                <input
+                  type="text"
+                  id="new_user_name"
+                  name="username"
+                  class="form-control create-user-input"
+                  placeholder="Username"
+                />
+                <input
+                  type="password"
+                  id="new_user_pass"
+                  name="password"
+                  class="form-control create-user-input mt-3"
+                  placeholder="Password"
+                />
+
+                <button
+                  type="button"
+                  class="btn btn-custom mt-4"
+                  onclick="createuser()"
+                >
+                  Create User
+                </button>
+              </div>
+            </div>
+            <div class="userslistcover">
+              <h5>Users List</h5>
+              <div id="userslist"></div>
+            </div>
+          </div>
+          <!-- Modal -->
+          <div id="myModal" style="display: none">
+            <div class="modal-dialog modal-sm modal-dialog-centered">
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="check-box">
+                    <i class="fa fa-check-circle"></i>
+                  </div>
+                  <p class="modal-text">User created <br />successfully</p>
+
+                  <a
+                    class="btn btn-default btn-back"
+                    onclick="window.location=window.location"
+                    >Done</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="">
+            <button class="btn btn-default" onclick="signOut()">Logout</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/users.js"></script>
+  <script src="../js/iteration.js"></script>
+</html>

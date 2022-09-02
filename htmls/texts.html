@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Texts</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="">
+          <div class="sidebar">
+            <a href="./dashboard.html" class="menu-item">
+              <i class="fa fa-image mr-2"></i>
+              Images
+            </a>
+            <a href="./texts.html" class="menu-item active">
+              <i class="fa fa-text-width mr-2"></i>
+              Texts
+            </a>
+            <a href="./settings.html" class="menu-item">
+              <i class="fa fa-cog mr-2"></i>
+              Settings
+            </a>
+            <div class="logout">
+              <a onclick="signOut()">
+                <i class="fa fa-sign-out"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+          <div class="content">
+            <h2>Texts</h2>
+            <div class="row mt-4">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-1"
+                      class="text-box-title"
+                      placeholder="Update text 1"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-2"
+                      class="text-box-title"
+                      placeholder="Update text 2"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-3"
+                      class="text-box-title"
+                      placeholder="Update text 3"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-4"
+                      class="text-box-title"
+                      placeholder="Update text 4"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-5"
+                      class="text-box-title"
+                      placeholder="Update text 5"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="row text-box mr-1">
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <textarea
+                      id="text-6"
+                      class="text-box-title"
+                      placeholder="Update text 6"
+                    ></textarea>
+                  </div>
+                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                    <button type="button" class="btn btn-default updatetextbtn">
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/texts.js"></script>
+</html>
