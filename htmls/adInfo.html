@@ -49,90 +49,44 @@
           </div>
           <div class="content">
             <h2>Additinal Infomation</h2>
-            <div class="mt-4">
-              <h4 class="sub-title">Iteration speed</h4>
-              <div class="card">
-                <div class="row">
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
-                    <input type="radio" name="iteration" id="30seconds" />
-                    <label class="radio-label active">30 seconds</label>
+            <div class="row mt-4">
+              <div class="row text-box mr-1">
+                <form>
+                  <input id="ai_head" class="text-box-title" placeholder="Insert">
+                  <textarea id="ai_content"  class="text-box-title"  placeholder="Insert Additional Information"></textarea>
+                  <div class="image-card">
+                    <h5>Image 4</h5>
+                    <img
+                      src="../images/image-4.png"
+                      id="image4-preview"
+                      alt="image-4"
+                    />
+                    <input
+                      type="file"
+                      id="image4"
+                      accept="image/bmp"
+                      onchange="showPreview(event);"
+                    />
+                    <div>
+                      <button
+                        class="btn btn-default"
+                        onclick="updateImg('image4')"
+                      >
+                        Update
+                      </button>
+                    </div>
                   </div>
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
-                    <input type="radio" name="iteration" id="minute" />
-                    <label class="radio-label">1 minute</label>
-                  </div>
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
-                    <input type="radio" name="iteration" id="30minutes" />
-                    <label class="radio-label">30 minutes</label>
-                  </div>
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1">
-                    <input type="radio" name="iteration" id="hour" />
-                    <label class="radio-label">1 hour</label>
-                  </div>
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1"></div>
-                  <div class="col-md-2 col-sm-4 col-xs-4 pt-1 text-right pr-0">
-                    <button class="btn btn-default" onclick="updateiteration()">
-                      Update
-                    </button>
-                  </div>
+                  <button type="button" class="btn btn-default updatetextbtn">Update</button>
+                 
+                </form>
                 </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-4 col-sm-8 col-xs-12">
-                <h4 class="sub-title">Add new user</h4>
-                <input
-                  type="text"
-                  id="new_user_name"
-                  name="username"
-                  class="form-control create-user-input"
-                  placeholder="Username"
-                />
-                <input
-                  type="password"
-                  id="new_user_pass"
-                  name="password"
-                  class="form-control create-user-input mt-3"
-                  placeholder="Password"
-                />
-
-                <button
-                  type="button"
-                  class="btn btn-custom mt-4"
-                  onclick="createuser()"
-                >
-                  Create User
-                </button>
-              </div>
-            </div>
-            <div class="userslistcover">
-              <h5>Users List</h5>
-              <div id="userslist"></div>
-            </div>
-          </div>
-          <!-- Modal -->
-          <div id="myModal" style="display: none">
-            <div class="modal-dialog modal-sm modal-dialog-centered">
-              <!-- Modal content-->
-              <div class="modal-content">
-                <div class="modal-body">
-                  <div class="check-box">
-                    <i class="fa fa-check-circle"></i>
-                  </div>
-                  <p class="modal-text">User created <br />successfully</p>
-
-                  <a
-                    class="btn btn-default btn-back"
-                    onclick="window.location=window.location"
-                    >Done</a
-                  >
+                <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
+                  <button type="button" class="btn btn-default updatetextbtn">
+                    Update
+                  </button>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="">
-            <button class="btn btn-default" onclick="signOut()">Logout</button>
+            </div>
           </div>
         </div>
       </section>
