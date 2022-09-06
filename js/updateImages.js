@@ -3,8 +3,8 @@
  */
 
 //server api
-const API = "https://imagesetting.vercel.app/api/img";
-const API_info = "https://imagesetting.vercel.app/info/img";
+//const API = "https://imagesetting.vercel.app/api/img";
+const API = "https://imagesetting.vercel.app/info/img";
 function updateImg(imgID) {
   const image = images[imgID];
 
