@@ -50,43 +50,35 @@
           <div class="content">
             <h2>Additinal Infomation</h2>
             <div class="row mt-4">
-              <div class="row text-box mr-1">
-                <form>
-                  <input id="ai_head" class="text-box-title" placeholder="Insert">
-                  <textarea id="ai_content"  class="text-box-title"  placeholder="Insert Additional Information"></textarea>
-                  <div class="image-card">
-                    <h5>Image 4</h5>
-                    <img
-                      src="../images/image-4.png"
-                      id="image4-preview"
-                      alt="image-4"
-                    />
-                    <input
-                      type="file"
-                      id="image4"
-                      accept="image/bmp"
-                      onchange="showPreview(event);"
-                    />
-                    <div>
-                      <button
-                        class="btn btn-default"
-                        onclick="updateImg('image4')"
-                      >
-                        Update
-                      </button>
+              <form>
+                <div class = "col-md-12" > 
+                  <div class="row text-box mr-1" style="margin-bottom: 10px;padding-top: 5px;">
+                    <input id="ai_head" class="text-box-title" style="height: 20px;" placeholder="Insert Header">
+                  </div>
+                </div>
+                <div class = "col-md-12"> 
+                  <div class="row text-box mr-1" style="height: 250px;margin-bottom: 10px;">
+                    <textarea id="ai_content"  class="text-box-title"  placeholder="Insert Additional Information"></textarea>
+                  </div>
+                  
+                </div>
+                <div class = "col-md-12"> 
+                  <div class="row text-box mr-1" style="height: 250px;margin-bottom: 10px;">
+                    <div class="image-card">
+                      <img src="../images/image_info.jpg" id="image_info" alt="Add Info of image"/>
+                      <input type="file" id="image_info" accept="image/bmp" onchange="showPreview(event);"/>
+                      <div>
+                        <button class="btn btn-default"  onclick="updateImg_info('image_info')">Update</button>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div>
                   <button type="button" class="btn btn-default updatetextbtn">Update</button>
-                 
-                </form>
-                </div>
-                <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
-                  <button type="button" class="btn btn-default updatetextbtn">
-                    Update
-                  </button>
-                </div>
-
+                </div>     
+              </form>
             </div>
+          
           </div>
         </div>
       </section>
