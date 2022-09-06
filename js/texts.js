@@ -1,4 +1,4 @@
-const API = "https://imagesetting.vercel.app/api/txtfile";
+const API = "https://jlproject1.vercel.app/api/txtfile";
 // const API = "http://localhost:3000/api/txtfile";
 
 (function () {
