@@ -28,30 +28,6 @@ function updateImg(imgID) {
       });
     });
 }
-function updateImg_info(imgID) {
-  const image = images[imgID];
-
-  const path = imgID;
-  var storageRef = firebase.storage().ref();
-  storageRef
-    .child(path)
-    .put(image)
-    .then((snapshot) => {
-      console.log("Uploaded a blob or file!", snapshot);
-      snapshot.ref.getDownloadURL().then(function (downloadURL) {
-        console.log(path, downloadURL);
-        //saving the image link in the next js mongodb
-        fetch(API_info + "/", {
-          method: "POST",
-          body: JSON.stringify({
-            path,
-            link: downloadURL,
-          }),
-        }).then((res) => console.log(res.body));
-      });
-    });
-}
-
 (async function () {
   //saving the images
   for (let i = 1; i <= 6; i++) {
