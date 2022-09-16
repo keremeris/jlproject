@@ -9,7 +9,7 @@ const API = "https://test-api-ruby.vercel.app/api/img";
 function updateImg(imgID) {
 
   const image = images[imgID];
- 
+  var downloadURL =""; 
   const path = imgID;
   console.log(imgID);
   var storageRef = firebase.storage().ref();
@@ -18,19 +18,15 @@ function updateImg(imgID) {
     .put(image)
     .then((snapshot) => {
       console.log("Uploaded a blob or file!", snapshot);
-      snapshot.ref.getDownloadURL().then(function (downloadURL) {
-        console.log(path, downloadURL);
-        //saving the image link in the next js mongodb
-        fetch(API, {
-          mode: 'no-cors',
-          method: "POST",
-          body: JSON.stringify({
-            path:path,
-            link: downloadURL,
-          }),
-        }).then((res) => console.log(res.body));
+      snapshot.ref.getDownloadURL().then(function (m_downloadURL)
+      {
+        downloadURL = m_downloadURL;
       });
     });
+  console.log(downloadURL);
+  firebase.database.ref("ImageInfomation/"+path).set({
+     link:downloadURL
+  })
 }
 (async function () {
   //saving the images
