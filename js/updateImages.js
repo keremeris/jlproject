@@ -25,7 +25,7 @@ function updateImg(imgID) {
           mode: 'no-cors',
           method: "POST",
           body: JSON.stringify({
-            path,
+            path:path,
             link: downloadURL,
           }),
         }).then((res) => console.log(res.body));
