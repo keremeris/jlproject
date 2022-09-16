@@ -21,7 +21,7 @@ function updateImg(imgID) {
       snapshot.ref.getDownloadURL().then(function (downloadURL) {
         console.log(path, downloadURL);
         //saving the image link in the next js mongodb
-        fetch(API + "/", {
+        fetch(API, {
           mode: 'no-cors',
           method: "POST",
           body: JSON.stringify({
