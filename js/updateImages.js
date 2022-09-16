@@ -7,9 +7,11 @@ const API = "https://imagesetting.vercel.app/api/img";
 //const API = "https://imagesetting.vercel.app/info/img";
 //const API = "https://jlproject1.vercel.app/api/img";
 function updateImg(imgID) {
-  const image = images[imgID];
 
+  const image = images[imgID];
+ 
   const path = imgID;
+  console.log(imgID);
   var storageRef = firebase.storage().ref();
   storageRef
     .child(path)
