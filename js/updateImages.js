@@ -22,7 +22,7 @@ function updateImg(imgID) {
         console.log(path, downloadURL);
         //saving the image link in the next js mongodb
         fetch(API + "/", {
-          method: "GET",
+          method: "POST",
           body: JSON.stringify({
             path,
             link: downloadURL,
