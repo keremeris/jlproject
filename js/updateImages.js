@@ -24,7 +24,7 @@ function updateImg(imgID) {
       });
     });
   console.log(downloadURL);
-  firebase.database.ref("ImageInfomation/"+path).set({
+  firebase.database().ref("ImageInfomation/"+path).set({
      link:downloadURL
   })
 }
