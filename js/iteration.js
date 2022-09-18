@@ -1,21 +1,18 @@
-//const API = "https://imagesetting.vercel.app/api/txtfile";
-const API = "https://jlproject1.vercel.app/api/txtfile";
-// const API = "http://localhost:3000/api/txtfile";
-
 (function () {
-  fetch(API).then(async (res) => {
-    let id = (await res.json()).iteration;
-    console.log(id);
-    document.getElementById(id).checked = true;
+  var dbRef = firebase.database().ref("Iteration");
+  dbRef.on("value", function(snapshot) {
+    console.log(snapshot.val().link);
+    document.getElementById(snapshot.val().iteration).checked = true;
+    //document.getElementById("image_info-preview").src = snapshot.val().link;
+  }, function (error) {
+      console.log("Error: " + error.code);
   });
 })();
 
 function updateiteration() {
   const value = document.querySelector('input[name="iteration"]:checked').id;
-  fetch(API, {
-    method: "POST",
-    body: JSON.stringify({ iteration: value }),
-  }).then(() => {
-    alert("Updated Successfully");
-  });
+  var dbRef = firebase.database().ref("Iteration");
+  dbRef.set({
+    iteration:value  
+  })
 }

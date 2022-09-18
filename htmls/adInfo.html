@@ -50,26 +50,31 @@
           <div class="content">
             <h2>Additinal Infomation</h2>
             <div class="row mt-4">
-              <form>
                 <div class = "col-md-12" > 
-                  <div class="row text-box mr-1" style="margin-bottom: 10px;padding-top: 5px;">
-                    <input id="ai_head" class="text-box-title" style="height: 20px;" placeholder="Insert Header">
+                  <div class = "row" > 
+                    <div class = "col-md-10" > 
+                      <div class="row text-box mr-1" style="margin-bottom: 10px;padding-top: 5px;">
+                        <input id="adinfo_head" class="text-box-title" style="height: 20px;" placeholder="Insert Header">
+                      </div>
+                    </div>
+                    
+                    <div  class = "col-md-2">
+                      <button type="button" class="btn btn-default" onclick="updateHead()">Update</button>
+                    </div>
                   </div>
                 </div>
                 <div class = "col-md-12"> 
                   <div class="row text-box mr-1" style="height: 250px;margin-bottom: 10px;">
-                    <textarea id="ai_content"  class="text-box-title"  placeholder="Insert Additional Information"></textarea>
+                    <textarea id="adinfo_content"  class="text-box-title"  placeholder="Insert Additional Information"></textarea>
                   </div>
-                  <div class="col-md-6 col-sm-6 col-xs-12 text-right px-0">
-                    <button type="button" class="btn btn-default updatetextbtn">
-                      Update
-                    </button>
+                  <div>
+                    <button type="button" class="btn btn-default updatetextbtn" onclick="updateContent()">Update</button>
                   </div>
                 </div>
                 <div class = "col-md-12"> 
                   <div class="row text-box mr-1" style="height: 250px;margin-bottom: 10px;">
                     <div class="image-card">
-                      <img src="../images/image_info.jpg" id="image_info" alt="Add Info of image"/>
+                      <img src="../images/image_info.bmp" id="image_info-preview" alt="Add Info of image"/>
                       <input type="file" id="image_info" accept="image/bmp" onchange="showPreview(event);"/>
                       <div>
                         <button class="btn btn-default"  onclick="updateImg_info('image_info')">Update</button>
@@ -77,10 +82,8 @@
                     </div>
                   </div>
                 </div>
-                <div>
-                  <button type="button" class="btn btn-default updatetextbtn">Update</button>
-                </div>     
-              </form>
+                     
+            
             </div>
           
           </div>
@@ -100,6 +103,6 @@
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
   <script src="../js/script.js"></script>
-  <script src="../js/users.js"></script>
-  <script src="../js/iteration.js"></script>
+  <!--<script src="../js/users.js"></script>-->
+  <script src="../js/adinfo.js"></script>
 </html>

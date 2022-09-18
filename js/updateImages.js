@@ -1,11 +1,4 @@
-/**
- * This script is used to handle Image Updation in the Dashboard
- */
 
-//server api
-const API = "https://test-api-ruby.vercel.app/api/img";
-//const API = "https://imagesetting.vercel.app/info/img";
-//const API = "https://jlproject1.vercel.app/api/img";
 function updateImg(imgID) {
 
   const image = images[imgID];
@@ -29,8 +22,17 @@ function updateImg(imgID) {
 }
 (async function () {
   //saving the images
+  var dbRef = firebase.database().ref("ImageInfomation");
+ 
   for (let i = 1; i <= 6; i++) {
-    document.getElementById("image" + i + "-preview").src =
-      API + "?path=" + "image" + i;
+    var path = "image"+i;
+    dbRef.child(path).on("value", function(snapshot) {
+      console.log(snapshot.val().link);
+      document.getElementById("image" + i + "-preview").src =snapshot.val().link
+    }, function (error) {
+        console.log("Error: " + error.code);
+    });
+  
   }
+  
 })();
